@@ -1,0 +1,126 @@
+---
+import type { Game } from '../data/games';
+
+interface Props {
+  games: Game[];
+}
+
+const { games } = Astro.props;
+---
+
+<section class="game-list-section">
+  <ul class="game-list">
+    {games.map((game) => (
+      <li class="game-item" itemscope itemtype="https://schema.org/ListItem">
+        <a href={game.url} class="game-link" itemprop="url">
+          <div class="game-image-container">
+            <img 
+              src={game.cover} 
+              alt={`Cover image for ${game.name}`} 
+              width="300" 
+              height="169" 
+              loading="lazy" 
+              itemprop="image"
+            />
+          </div>
+          <div class="game-info">
+            <h3 class="game-title" itemprop="name">{game.name}</h3>
+            <p class="game-description" itemprop="description">{game.shortDescription}</p>
+            <span class="play-button">Play Now</span>
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .game-list-section {
+    margin: 2rem 0;
+  }
+
+  .game-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .game-item {
+    background-color: var(--dark-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .game-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(122, 48, 255, 0.4);
+  }
+
+  .game-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+
+  .game-image-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .game-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .game-item:hover .game-image-container img {
+    transform: scale(1.05);
+  }
+
+  .game-info {
+    padding: 1.5rem;
+  }
+
+  .game-title {
+    color: var(--cyan);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .game-description {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .play-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(45deg, var(--purple), var(--neon-green));
+    color: var(--black);
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+  }
+
+  .game-item:hover .play-button {
+    background: linear-gradient(45deg, var(--neon-green), var(--cyan));
+  }
+
+  @media (max-width: 768px) {
+    .game-list {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

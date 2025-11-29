@@ -15,7 +15,7 @@ const {
   title,
   description,
   canonical = Astro.url.pathname,
-  ogImage = '/assets/covers/geometrydash-cover.webp',
+  ogImage = '/assets/covers/geometry-dash-gameplay-screenshot-obstacles.png',
   ogType = 'website',
   keywords = 'geometry dash, geometry dash online, geometry dash unblocked, play geometry dash, geometry dash game',
   jsonLd = []
@@ -62,15 +62,12 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <meta property="twitter:image" content={fullOgImage}>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/icons/geometrydash-icon.png">
-  <link rel="apple-touch-icon" href="/assets/icons/geometrydash-icon.png">
+  <link rel="icon" type="image/webp" href="/assets/icons/geometrydash-icon.webp">
+  <link rel="apple-touch-icon" href="/assets/icons/geometrydash-icon.webp">
   
   <!-- Preconnect to external domains for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- DNS Prefetch -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   
   <!-- Theme Color -->
   <meta name="theme-color" content="#0d1b2a">

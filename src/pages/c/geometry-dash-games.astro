@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
+import GameList from '../../components/GameList.astro';
+import { GAMES } from '../../data/games';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Categories', url: '/categories/' },
+  { name: 'Geometry Dash Games', url: '/c/geometry-dash-games/' }
+];
+
+const categoryGames = GAMES.filter(game => game.category === 'geometry-dash');
+
+const categorySchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Geometry Dash Games - Play Free Online",
+  "description": "Play all versions of Geometry Dash online for free. Includes the original, Lite, Meltdown, and SubZero. Unblocked and ready to play!",
+  "url": "https://geometrydash.ie/c/geometry-dash-games/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": categoryGames.map((game, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": game.name,
+      "url": `https://geometrydash.ie${game.url}`,
+      "image": `https://geometrydash.ie${game.cover}`
+    }))
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://geometrydash.ie"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Categories",
+      "item": "https://geometrydash.ie/categories/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Geometry Dash Games",
+      "item": "https://geometrydash.ie/c/geometry-dash-games/"
+    }
+  ]
+};
+
+const tableOfContents = [
+  { id: "what-are-geometry-dash-games", title: "What Are Geometry Dash Games?" },
+  { id: "why-play-geometry-dash", title: "Why Play Geometry Dash?" },
+  { id: "all-geometry-dash-versions", title: "All Geometry Dash Versions" },
+  { id: "gameplay-mechanics", title: "Core Gameplay Mechanics" },
+  { id: "faq", title: "Frequently Asked Questions" }
+];
+---
+
+<BaseLayout
+  title="Geometry Dash Games - Play Free Online | Geometry Dash IE"
+  description="Play all versions of Geometry Dash online for free. Includes the original, Lite, Meltdown, and SubZero. Unblocked and ready to play!"
+  keywords="geometry dash games, geometry dash unblocked, play geometry dash, geometry dash lite, geometry dash meltdown, geometry dash subzero"
+  jsonLd={[categorySchema, breadcrumbSchema]}
+  ogImage="/assets/covers/geometry-dash-gameplay-screenshot-obstacles.png"
+>
+  <Header />
+  
+  <main id="main-content">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      
+      <article class="category-page">
+        <header class="category-header">
+          <h1>Geometry Dash Games – Play Free Online</h1>
+          
+          <div class="category-intro">
+            <p>Welcome to the ultimate collection of **Geometry Dash Games**! Experience the full range of the rhythm-based platformer phenomenon, from the original classic to the exciting spin-offs like Lite, Meltdown, and SubZero. All games are available to play **unblocked** directly in your browser, with no downloads or installations required. Master the rhythm, time your jumps, and conquer the geometric challenges!</p>
+          </div>
+        </header>
+
+        <!-- TABLE OF CONTENTS -->
+        <TableOfContents items={tableOfContents} />
+
+        <section class="article-content">
+          <h2 id="what-are-geometry-dash-games">What Are Geometry Dash Games?</h2>
+          <p>Geometry Dash games are a series of rhythm-based platformers created by Robert Topala (RobTop Games). The core concept involves controlling a geometric shape (usually a cube) that moves automatically through a level. The player must tap the screen or press a key to make the shape jump, fly, or flip, avoiding obstacles that are perfectly synchronized with the background music. This unique blend of platforming and music creates an incredibly addictive and challenging experience.</p>
+
+          <p>The franchise has grown significantly since the original release in 2013, spawning several official spin-offs that introduce new levels, music, and visual themes. While the difficulty is high, the simple one-touch controls make the games easy to pick up, though mastering them requires precision, patience, and pattern recognition.</p>
+
+          <h2 id="why-play-geometry-dash">Why Play Geometry Dash Games?</h2>
+          <p>Millions of players worldwide are addicted to Geometry Dash for several reasons:</p>
+          <ul>
+            <li>**Addictive Gameplay:** The "die and retry" loop is highly engaging, constantly pushing players to improve their timing and reflexes.</li>
+            <li>**Music Synchronization:** The perfect harmony between the music and the level design makes the game feel like a musical performance.</li>
+            <li>**Accessibility:** All versions are available to play free and unblocked online, making them accessible from any device with a web browser.</li>
+            <li>**Skill Development:** Playing regularly improves hand-eye coordination, timing, and pattern recognition skills.</li>
+            <li>**Community:** A massive community creates and shares thousands of custom levels, ensuring endless content.</li>
+          </ul>
+
+          <h2 id="all-geometry-dash-versions">All Geometry Dash Versions</h2>
+          <p>Explore the different official versions of the game available to play online:</p>
+          <GameList games={categoryGames} />
+
+          <h2 id="gameplay-mechanics">Core Gameplay Mechanics</h2>
+          <p>All Geometry Dash games share fundamental mechanics that define the experience:</p>
+          <ul>
+            <li>**One-Touch Controls:** Simple tap-to-jump controls that are easy to learn.</li>
+            <li>**Rhythm-Based Obstacles:** Obstacles appear in sync with the music, making the soundtrack a crucial guide.</li>
+            <li>**Character Transformations:** The player's icon transforms into different forms (ship, ball, UFO, wave, robot, spider), each with unique physics.</li>
+            <li>**Portals:** Gravity portals, size portals, and speed portals change the gameplay dynamics instantly, requiring quick adaptation.</li>
+            <li>**Practice Mode:** Allows players to place checkpoints to practice difficult sections without having to restart the entire level.</li>
+          </ul>
+
+          <h2 id="faq">Frequently Asked Questions</h2>
+          <p>Here are some common questions about playing Geometry Dash games online:</p>
+          <ul>
+            <li>**Are these games unblocked?** Yes, all games on geometrydash.ie are unblocked and can be played directly in your browser without restrictions.</li>
+            <li>**Do I need to download anything?** No, all games are HTML5-based and run instantly in your web browser.</li>
+            <li>**What is the newest Geometry Dash game?** The newest official spin-off is Geometry Dash Breeze, which features a colorful, vibrant theme.</li>
+            <li>**Can I play on mobile?** Yes, the web versions are fully optimized for touch controls on mobile phones and tablets.</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>
