@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import RatingWidget from '../components/RatingWidget.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GameIframe from '../components/GameIframe.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -14,10 +15,11 @@ const gameSchema = {
   "@context": "https://schema.org",
   "@type": "VideoGame",
   "name": "Geometry Dash Meltdown",
-  "description": "Play Geometry Dash Meltdown online for free. A spin-off with new levels, music, and visual themes. Unblocked and ready to play!",
+  "description": "Play Geometry Dash Meltdown online for free. A spin-off with new levels, music, and dark visual themes. Unblocked and ready to play!",
   "genre": ["Platformer", "Rhythm", "Action"],
   "gamePlatform": ["Web Browser", "Online"],
   "applicationCategory": "Game",
+  "url": "https://geometrydash.ie/geometry-dash-meltdown/",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -39,9 +41,9 @@ const gameSchema = {
 ---
 
 <BaseLayout
-  title="Geometry Dash Meltdown – Play Free Online"
-  description="Play Geometry Dash Meltdown online for free! A spin-off with new levels, music, and visual themes. Unblocked, no download required. Play now!"
-  keywords="geometry dash meltdown, geometry dash meltdown online, geometry dash meltdown unblocked, play geometry dash meltdown free"
+  title="Geometry Dash Meltdown – Play Free Online (New Levels)"
+  description="Play Geometry Dash Meltdown online for free! A spin-off with new levels, dark music, and unique themes. Unblocked, no download required. Play now!"
+  keywords="geometry dash meltdown, geometry dash meltdown online, geometry dash meltdown free, dark platformer game"
   jsonLd={[gameSchema]}
   ogImage="/assets/covers/geometrydash-meltdown-cover.png"
 >
@@ -54,66 +56,112 @@ const gameSchema = {
       <article class="game-page">
         <header class="game-header">
           <div class="game-icon">
-            <img src="/assets/icons/geometrydashmeltdown-icon.webp" alt="Geometry Dash Meltdown Icon" width="120" height="120" />
+            <img src="/assets/icons/geometrydashmeltdown-icon.webp" alt="Geometry Dash Meltdown Icon" width="120" height="120" loading="lazy" />
           </div>
           <h1>Geometry Dash Meltdown – Play Free Online</h1>
           
           <div class="game-intro">
-            <p><strong>Geometry Dash Meltdown</strong> is an exciting spin-off featuring new levels, fresh music tracks, and unique visual themes. Experience the same addictive gameplay with completely new challenges!</p>
+            <p><strong>Geometry Dash Meltdown</strong> is an exciting spin-off featuring completely new levels, fresh music tracks, and unique dark visual themes. Experience the same addictive rhythm-platformer gameplay with completely new challenges and a darker aesthetic that sets it apart from the original game.</p>
           </div>
           
           <div class="rating-section">
             <RatingWidget rating={4.6} ratingCount={9876} gameName="Geometry Dash Meltdown" />
           </div>
         </header>
+
+        <!-- GAME IFRAME SECTION -->
+        <section class="game-iframe-section">
+          <GameIframe 
+            src="https://geometrydashgame.com/gd-proxy/index.html"
+            title="Play Geometry Dash Meltdown Online"
+            description="Click the play button above to start playing Geometry Dash Meltdown. Use spacebar, mouse click, or arrow keys to jump. Complete levels by avoiding obstacles and reaching 100%."
+          />
+        </section>
         
         <section class="article-content">
           <h2>What is Geometry Dash Meltdown?</h2>
-          <p>Geometry Dash Meltdown is a spin-off of the original Geometry Dash game. While it maintains the core rhythm-platformer mechanics, it introduces completely new levels, original music tracks, and unique visual themes. If you've mastered the original game, Meltdown offers fresh challenges with a different flavor.</p>
+          <p>Geometry Dash Meltdown is a spin-off of the original Geometry Dash game. While it maintains the core rhythm-platformer mechanics, it introduces completely new levels, original music tracks, and unique visual themes with a darker aesthetic. If you've mastered the original game, Meltdown offers fresh challenges with a different flavor and atmosphere that makes it feel like a brand new experience.</p>
 
           <figure class="article-image">
-            <img src="/assets/covers/geometrydash-meltdown-cover.png" alt="Geometry Dash Meltdown Gameplay" width="800" height="450" />
-            <figcaption>Geometry Dash Meltdown brings new levels and music to the classic formula</figcaption>
+            <img src="/assets/covers/geometrydash-meltdown-cover.png" alt="Geometry Dash Meltdown Gameplay - Dark Neon Theme" width="800" height="450" loading="lazy" />
+            <figcaption>Geometry Dash Meltdown brings new levels and dark music to the classic formula</figcaption>
           </figure>
           
-          <h2>New Content in Meltdown</h2>
+          <h2>New Content in Geometry Dash Meltdown</h2>
+          <p>Meltdown is not just a reskin of the original game—it's a completely new experience with fresh content designed specifically for this version. Every aspect has been carefully crafted to provide a unique challenge and aesthetic.</p>
+          
           <ul>
-            <li><strong>Original Levels:</strong> All-new stages designed specifically for Meltdown</li>
-            <li><strong>Unique Soundtrack:</strong> Fresh electronic music tracks synchronized with gameplay</li>
-            <li><strong>Visual Themes:</strong> Different color schemes and visual effects than the original</li>
-            <li><strong>Challenging Mechanics:</strong> New obstacles and gameplay elements to master</li>
-            <li><strong>Same Core Gameplay:</strong> The responsive one-button controls you know and love</li>
+            <li><strong>Original Levels:</strong> All-new stages designed specifically for Meltdown with unique patterns and obstacles</li>
+            <li><strong>Unique Soundtrack:</strong> Fresh electronic music tracks synchronized with gameplay and perfectly matched to the dark theme</li>
+            <li><strong>Dark Visual Themes:</strong> Different color schemes and visual effects with a darker, more intense aesthetic</li>
+            <li><strong>Challenging Mechanics:</strong> New obstacles and gameplay elements specifically designed for Meltdown</li>
+            <li><strong>Same Core Gameplay:</strong> The responsive one-button controls you know and love from the original</li>
+            <li><strong>Multiple Game Modes:</strong> Character transformations and forms just like the original</li>
           </ul>
           
           <h2>Why Play Geometry Dash Meltdown?</h2>
-          <p>If you've beaten the original Geometry Dash and want more, Meltdown is the perfect next step. It offers the same satisfying rhythm-based gameplay but with completely fresh content. The new levels are designed to challenge even experienced players.</p>
+          <p>If you've beaten the original Geometry Dash and want more, Meltdown is the perfect next step. It offers the same satisfying rhythm-based gameplay but with completely fresh content. The new levels are designed to challenge even experienced players. The darker visual theme and new music create a different atmosphere that keeps the game feeling fresh and exciting.</p>
           
           <h2>Gameplay Mechanics</h2>
-          <p>Geometry Dash Meltdown uses the same one-button control system as the original. Press spacebar, click the mouse, or tap the screen to jump. Your character moves automatically, and you need to time your jumps perfectly to avoid obstacles and complete each level.</p>
+          <p>Geometry Dash Meltdown uses the same one-button control system as the original. Press spacebar, click the mouse, or tap the screen to jump. Your character moves automatically, and you need to time your jumps perfectly to avoid obstacles and complete each level. The fundamental mechanics are familiar, but the new level designs provide fresh challenges.</p>
           
-          <h2>Game Modes</h2>
-          <p>Like the original, Meltdown features multiple game modes. Your character transforms between different forms—cube, ship, ball, UFO, wave, and more—each with unique physics and controls. Mastering each form is key to beating the challenging levels.</p>
+          <h2>Game Modes and Character Forms</h2>
+          <p>Like the original, Meltdown features multiple game modes. Your character transforms between different forms—cube, ship, ball, UFO, wave, and more—each with unique physics and controls. Mastering each form is key to beating the challenging levels in Meltdown. Each form behaves differently, requiring different strategies and timing.</p>
+          
+          <h2>The Cube Form in Meltdown</h2>
+          <p>The cube is your default form and the most straightforward to control. It jumps over obstacles with standard gravity physics. In Meltdown, the cube form is used in many levels, so mastering it is essential for progression.</p>
+          
+          <h2>Advanced Forms in Meltdown</h2>
+          <p>Meltdown introduces challenging uses of the ship, ball, UFO, and wave forms. These forms require precise timing and control. The levels are designed to teach you how to use each form effectively through practice and repetition.</p>
           
           <h2>Difficulty and Progression</h2>
-          <p>Geometry Dash Meltdown offers a good difficulty curve. Early levels teach you the basics and introduce new mechanics gradually. As you progress, the challenges become more intense, requiring precise timing and pattern memorization.</p>
+          <p>Geometry Dash Meltdown offers a good difficulty curve. Early levels teach you the basics and introduce new mechanics gradually. As you progress, the challenges become more intense, requiring precise timing and pattern memorization. The difficulty ramps up faster than in the original game, making it suitable for experienced players.</p>
           
-          <h2>Practice Mode</h2>
-          <p>Stuck on a difficult section? Use practice mode to place checkpoints and practice specific parts of a level without restarting from the beginning. This feature is essential for learning tough sequences and improving your consistency.</p>
+          <h2>Level Design Philosophy</h2>
+          <p>Each level in Meltdown is carefully designed to be challenging but fair. The levels teach you specific skills and mechanics that you'll need for later stages. The progression is logical, with each new level building on what you've learned previously.</p>
           
-          <h2>Customization</h2>
-          <p>As you progress through Meltdown, unlock new icons, colors, and visual customization options. Personalize your character to make it uniquely yours while you master the challenging levels.</p>
+          <h2>Practice Mode Strategy</h2>
+          <p>Stuck on a difficult section? Use practice mode to place checkpoints and practice specific parts of a level without restarting from the beginning. This feature is essential for learning tough sequences and improving your consistency. Spend time in practice mode to build muscle memory and understand level patterns.</p>
           
-          <h2>Tips for Mastering Meltdown</h2>
+          <h2>Customization and Unlockables</h2>
+          <p>As you progress through Meltdown, unlock new icons, colors, and visual customization options. Personalize your character to make it uniquely yours while you master the challenging levels. The dark theme of Meltdown makes the customization options feel especially striking.</p>
+          
+          <h2>Tips for Mastering Geometry Dash Meltdown</h2>
           <ul>
-            <li>Listen carefully to the music—obstacles sync with the beat</li>
-            <li>Don't rush; focus on consistency over speed</li>
+            <li>Listen carefully to the music—obstacles sync with the beat perfectly</li>
+            <li>Don't rush; focus on consistency and accuracy over speed</li>
             <li>Use practice mode extensively to learn difficult sections</li>
             <li>Watch how each game mode behaves before attempting hard levels</li>
             <li>Take breaks to maintain focus and avoid frustration</li>
+            <li>Study level patterns before attempting them</li>
+            <li>Remember that each failure teaches you something valuable</li>
           </ul>
           
+          <h2>Comparing Meltdown to the Original</h2>
+          <p>While Meltdown uses the same core mechanics as the original Geometry Dash, it offers a completely different experience. The new levels, music, and visual theme create a fresh challenge. If you're looking for more Geometry Dash content after beating the original, Meltdown is exactly what you need.</p>
+          
+          <h2>Community and Feedback</h2>
+          <p>Geometry Dash Meltdown has been well-received by the community. Players appreciate the new content and the darker aesthetic. The game maintains the quality and polish of the original while providing genuinely new challenges.</p>
+          
           <h2>Free to Play Online</h2>
-          <p>Geometry Dash Meltdown is completely free to play on geometrydash.ie. No downloads, no registration, and no hidden costs. Just open your browser and start playing instantly.</p>
+          <p>Geometry Dash Meltdown is completely free to play on geometrydash.ie. No downloads, no registration, and no hidden costs. Just open your browser and start playing instantly. The game loads quickly and runs smoothly on any modern browser.</p>
+          
+          <h2>Frequently Asked Questions</h2>
+          
+          <h3>Is Geometry Dash Meltdown harder than the original?</h3>
+          <p>Meltdown offers a similar difficulty range to the original, but the levels are designed differently. Some players find it harder, while others find it easier—it depends on your playstyle and skills.</p>
+          
+          <h3>Do I need to play the original first?</h3>
+          <p>No, you can play Meltdown without playing the original. However, if you're new to Geometry Dash, starting with the original or Lite version is recommended for learning the basics.</p>
+          
+          <h3>Can I play Meltdown on mobile?</h3>
+          <p>Yes, Geometry Dash Meltdown works on mobile devices through the browser. It's fully responsive and optimized for touch controls.</p>
+          
+          <h3>How many levels are in Meltdown?</h3>
+          <p>Meltdown includes a substantial number of new levels designed to provide hours of gameplay and challenge.</p>
+          
+          <h2>Conclusion</h2>
+          <p>Geometry Dash Meltdown is an excellent addition to the Geometry Dash franchise. With its new levels, unique music, and darker aesthetic, it provides a fresh challenge for experienced players. Whether you're looking for more content after beating the original or want a different take on Geometry Dash, Meltdown delivers. Start playing today and experience the intensity of Geometry Dash Meltdown!</p>
         </section>
       </article>
     </div>
@@ -148,16 +196,27 @@ const gameSchema = {
     color: var(--neon-green);
     margin: 2rem 0 1.5rem;
     text-shadow: 0 0 20px rgba(74, 246, 38, 0.5);
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
 
   .game-intro {
     margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
   }
 
   .rating-section {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
+  }
+
+  .game-iframe-section {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 2px solid var(--dark-secondary);
+    border-bottom: 2px solid var(--dark-secondary);
   }
 
   .article-content {
@@ -170,11 +229,20 @@ const gameSchema = {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--purple);
+    font-size: 2rem;
+  }
+
+  .article-content h3 {
+    color: var(--yellow);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 
   .article-content p {
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    font-size: 1rem;
   }
 
   .article-content ul {
@@ -213,5 +281,19 @@ const gameSchema = {
     font-size: 0.95rem;
     text-align: center;
     line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .game-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+    }
   }
 </style>

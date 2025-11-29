@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import RatingWidget from '../components/RatingWidget.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import GameIframe from '../components/GameIframe.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -18,6 +19,7 @@ const gameSchema = {
   "genre": ["Platformer", "Rhythm", "Action"],
   "gamePlatform": ["Web Browser", "Online"],
   "applicationCategory": "Game",
+  "url": "https://geometrydash.ie/geometry-dash-breeze/",
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -39,9 +41,9 @@ const gameSchema = {
 ---
 
 <BaseLayout
-  title="Geometry Dash Breeze – Play Free Online"
-  description="Play Geometry Dash Breeze online for free! A light-hearted spin-off with colorful levels and upbeat music. Unblocked, no download required. Play now!"
-  keywords="geometry dash breeze, geometry dash breeze online, geometry dash breeze unblocked, play geometry dash breeze free"
+  title="Geometry Dash Breeze – Play Free Online (Colorful Version)"
+  description="Play Geometry Dash Breeze online for free! A colorful spin-off with vibrant levels and upbeat music. Unblocked, no download required. Play now!"
+  keywords="geometry dash breeze, geometry dash breeze online, geometry dash breeze free, colorful platformer game"
   jsonLd={[gameSchema]}
   ogImage="/assets/covers/geometrydash-breeze.png"
 >
@@ -54,57 +56,84 @@ const gameSchema = {
       <article class="game-page">
         <header class="game-header">
           <div class="game-icon">
-            <img src="/assets/icons/geometrydashBREEZE-ICON.png" alt="Geometry Dash Breeze Icon" width="120" height="120" />
+            <img src="/assets/icons/geometrydashBREEZE-ICON.png" alt="Geometry Dash Breeze Icon" width="120" height="120" loading="lazy" />
           </div>
           <h1>Geometry Dash Breeze – Play Free Online</h1>
           
           <div class="game-intro">
-            <p><strong>Geometry Dash Breeze</strong> is a colorful and upbeat spin-off of the classic rhythm platformer. Enjoy vibrant levels, catchy music, and the same addictive gameplay in a lighter, more playful setting!</p>
+            <p><strong>Geometry Dash Breeze</strong> is a colorful and upbeat spin-off of the classic rhythm platformer. Enjoy vibrant levels, catchy music, and the same addictive gameplay in a lighter, more playful setting. Experience Geometry Dash with a completely new colorful aesthetic and fresh content that feels welcoming and fun.</p>
           </div>
           
           <div class="rating-section">
             <RatingWidget rating={4.5} ratingCount={8765} gameName="Geometry Dash Breeze" />
           </div>
         </header>
+
+        <!-- GAME IFRAME SECTION -->
+        <section class="game-iframe-section">
+          <GameIframe 
+            src="https://1games.io/game/geometry-dash-breeze/"
+            title="Play Geometry Dash Breeze Online"
+            description="Click the play button above to start playing Geometry Dash Breeze. Use spacebar, mouse click, or arrow keys to jump. Complete levels by avoiding obstacles and reaching 100%."
+          />
+        </section>
         
         <section class="article-content">
           <h2>What is Geometry Dash Breeze?</h2>
-          <p>Geometry Dash Breeze is a vibrant and playful spin-off of the original Geometry Dash. It maintains the core rhythm-platformer mechanics while introducing a lighter, more colorful aesthetic. With upbeat music and cheerful level design, Breeze offers a refreshing take on the Geometry Dash formula.</p>
+          <p>Geometry Dash Breeze is a vibrant and playful spin-off of the original Geometry Dash. It maintains the core rhythm-platformer mechanics while introducing a lighter, more colorful aesthetic. With upbeat music and cheerful level design, Breeze offers a refreshing take on the Geometry Dash formula that feels inviting and fun for all ages.</p>
 
           <figure class="article-image">
-            <img src="/assets/covers/geometrydash-breeze.png" alt="Geometry Dash Breeze Gameplay - Colorful Version" width="800" height="450" />
+            <img src="/assets/covers/geometrydash-breeze.png" alt="Geometry Dash Breeze Gameplay - Colorful Vibrant Version" width="800" height="450" loading="lazy" />
             <figcaption>Geometry Dash Breeze brings vibrant colors and upbeat music to the classic gameplay</figcaption>
           </figure>
           
-          <h2>Colorful Features</h2>
+          <h2>Colorful Features of Breeze</h2>
+          <p>Breeze stands out from other Geometry Dash games with its vibrant and playful aesthetic. Every visual element has been designed to create a cheerful and inviting atmosphere that enhances the gaming experience.</p>
+          
           <ul>
-            <li><strong>Vibrant Visual Design:</strong> Bright, colorful backgrounds and obstacles</li>
-            <li><strong>Cheerful Levels:</strong> Playful level design with a lighter tone</li>
-            <li><strong>Upbeat Soundtrack:</strong> Catchy, energetic music that's fun and engaging</li>
-            <li><strong>Playful Obstacles:</strong> Creative and colorful obstacle designs</li>
-            <li><strong>Smooth Controls:</strong> The responsive one-button gameplay you love</li>
+            <li><strong>Vibrant Visual Design:</strong> Bright, colorful backgrounds and obstacles that pop off the screen</li>
+            <li><strong>Cheerful Levels:</strong> Playful level design with a lighter tone that feels less intimidating</li>
+            <li><strong>Upbeat Soundtrack:</strong> Catchy, energetic music that's fun and engaging throughout</li>
+            <li><strong>Playful Obstacles:</strong> Creative and colorful obstacle designs that are visually appealing</li>
+            <li><strong>Smooth Controls:</strong> The responsive one-button gameplay you love from the original</li>
+            <li><strong>Welcoming Atmosphere:</strong> An overall aesthetic that welcomes players of all skill levels</li>
           </ul>
           
           <h2>Gameplay Mechanics</h2>
-          <p>Geometry Dash Breeze uses the same simple control system as the original. Press spacebar, click the mouse, or tap the screen to jump. Your character moves automatically forward, and you need to time your jumps perfectly to avoid obstacles and complete each level.</p>
+          <p>Geometry Dash Breeze uses the same simple control system as the original. Press spacebar, click the mouse, or tap the screen to jump. Your character moves automatically forward, and you need to time your jumps perfectly to avoid obstacles and complete each level. The fundamental mechanics are familiar, but the new level designs provide fresh challenges.</p>
           
           <h2>Level Design and Difficulty</h2>
-          <p>The levels in Breeze are designed to be fun and engaging while maintaining a good difficulty curve. Early levels are accessible for beginners, while later levels provide solid challenges for experienced players. The colorful aesthetic makes the game feel less intimidating than the original.</p>
+          <p>The levels in Breeze are designed to be fun and engaging while maintaining a good difficulty curve. Early levels are accessible for beginners, while later levels provide solid challenges for experienced players. The colorful aesthetic makes the game feel less intimidating than the original, making it more appealing to casual players.</p>
           
-          <h2>Game Modes</h2>
-          <p>Like other Geometry Dash games, Breeze features multiple game modes with different character forms. Your cube transforms into a ship, ball, UFO, wave, and more. Each form has unique physics and controls, keeping the gameplay varied and interesting throughout your journey.</p>
+          <h2>Game Modes and Character Forms</h2>
+          <p>Like other Geometry Dash games, Breeze features multiple game modes with different character forms. Your cube transforms into a ship, ball, UFO, wave, and more. Each form has unique physics and controls, keeping the gameplay varied and interesting throughout your journey. Learning how each form works is essential for progression.</p>
           
-          <h2>Practice Mode</h2>
-          <p>Stuck on a challenging section? Use practice mode to place checkpoints and practice specific parts of a level without restarting from the beginning. This feature helps you learn difficult sequences and improve your consistency.</p>
+          <h2>The Cube Form in Breeze</h2>
+          <p>The cube is your default form and the most straightforward to control. In Breeze, the cube form is used extensively in the early and mid-game levels, making it essential to master for progression.</p>
+          
+          <h2>Advanced Forms in Breeze</h2>
+          <p>Breeze introduces engaging uses of the ship, ball, UFO, and wave forms. These forms require precise timing and control. The colorful levels are designed to teach you how to use each form effectively through practice and repetition.</p>
+          
+          <h2>Practice Mode for Learning</h2>
+          <p>Stuck on a challenging section? Use practice mode to place checkpoints and practice specific parts of a level without restarting from the beginning. This feature helps you learn difficult sequences and improve your consistency. Practice mode is essential for mastering the more challenging levels.</p>
           
           <h2>Customization and Unlockables</h2>
-          <p>Progress through Breeze to unlock new icons, colors, and customization options. Personalize your character with colorful skins and visual effects that match the vibrant aesthetic of the game.</p>
+          <p>Progress through Breeze to unlock new icons, colors, and customization options. Personalize your character with colorful skins and visual effects that match the vibrant aesthetic of the game. The customization options in Breeze have a distinctly playful and colorful feel.</p>
           
           <h2>Why Play Geometry Dash Breeze?</h2>
-          <p>If you want the addictive gameplay of Geometry Dash but prefer a more colorful and playful experience, Breeze is perfect for you. It's great for players who find the original game too intense or dark. The vibrant visuals and upbeat music create a more relaxed, enjoyable atmosphere while maintaining the challenging gameplay.</p>
+          <p>If you want the addictive gameplay of Geometry Dash but prefer a more colorful and playful experience, Breeze is perfect for you. It's great for players who find the original game too intense or dark. The vibrant visuals and upbeat music create a more relaxed, enjoyable atmosphere while maintaining the challenging gameplay that makes Geometry Dash fun.</p>
           
           <h2>Perfect for All Ages</h2>
-          <p>The colorful and playful design of Geometry Dash Breeze makes it appealing to players of all ages. While it still offers genuine challenges, the lighter tone and vibrant aesthetics make it feel more welcoming and fun.</p>
+          <p>The colorful and playful design of Geometry Dash Breeze makes it appealing to players of all ages. While it still offers genuine challenges, the lighter tone and vibrant aesthetics make it feel more welcoming and fun. Parents looking for games for their children will appreciate the cheerful design.</p>
+          
+          <h2>Difficulty and Progression</h2>
+          <p>Breeze offers a good difficulty curve suitable for both new and experienced players. Early levels teach you the basics with simple jumps and straightforward obstacles. As you progress, new mechanics are introduced and the challenges become more intense. The difficulty ramps up gradually, ensuring a smooth learning curve.</p>
+          
+          <h2>Community Reception</h2>
+          <p>Geometry Dash Breeze has been well-received by the community. Players appreciate the unique colorful aesthetic and the quality of the level design. The game maintains the polish and quality of the original while offering a distinctly different experience that appeals to a wider audience.</p>
+          
+          <h2>Comparing Breeze to Other Versions</h2>
+          <p>While Breeze uses the same core mechanics as the original Geometry Dash, it offers a completely different experience. The colorful theme, new levels, and upbeat music create a fresh challenge. If you're looking for variety in the Geometry Dash franchise, Breeze is an excellent choice.</p>
           
           <h2>Tips for Mastering Breeze</h2>
           <ul>
@@ -113,10 +142,32 @@ const gameSchema = {
             <li>Practice difficult sections in practice mode</li>
             <li>Don't rush—consistent, accurate jumps are key</li>
             <li>Take breaks to maintain focus and enjoy the game</li>
+            <li>Study the colorful level designs before attempting them</li>
+            <li>Remember that each attempt teaches you something valuable</li>
           </ul>
           
+          <h2>Casual vs. Competitive Play</h2>
+          <p>Breeze is perfect for casual play, but it also offers enough challenge for competitive players. Whether you're playing for relaxation or trying to beat all levels, Breeze delivers an engaging experience. The game scales well for different playstyles.</p>
+          
           <h2>Free to Play Online</h2>
-          <p>Geometry Dash Breeze is completely free to play on geometrydash.ie. No downloads, no registration, and no hidden costs. Just open your browser and start playing instantly.</p>
+          <p>Geometry Dash Breeze is completely free to play on geometrydash.ie. No downloads, no registration, and no hidden costs. Just open your browser and start playing instantly. The game loads quickly and runs smoothly on any modern browser.</p>
+          
+          <h2>Frequently Asked Questions</h2>
+          
+          <h3>Is Geometry Dash Breeze easier than the original?</h3>
+          <p>Breeze offers a similar difficulty range to the original, but the levels are designed differently. The colorful aesthetic might make it feel easier, but the actual difficulty is comparable.</p>
+          
+          <h3>Is Breeze suitable for children?</h3>
+          <p>Yes, Geometry Dash Breeze is suitable for children. The colorful design and playful aesthetic make it appealing to younger players. However, some levels can still be challenging.</p>
+          
+          <h3>Can I play Breeze on mobile?</h3>
+          <p>Yes, Geometry Dash Breeze works on mobile devices through the browser. It's fully responsive and optimized for touch controls.</p>
+          
+          <h3>How many levels are in Breeze?</h3>
+          <p>Breeze includes a substantial number of colorful levels designed to provide hours of gameplay and challenge.</p>
+          
+          <h2>Conclusion</h2>
+          <p>Geometry Dash Breeze is an excellent addition to the Geometry Dash franchise. With its vibrant colors, upbeat music, and playful design, it provides a fresh experience for players of all skill levels. Whether you're a longtime Geometry Dash fan or new to the series, Breeze offers something special. Start playing today and experience the joy of Geometry Dash Breeze!</p>
         </section>
       </article>
     </div>
@@ -151,16 +202,27 @@ const gameSchema = {
     color: var(--neon-green);
     margin: 2rem 0 1.5rem;
     text-shadow: 0 0 20px rgba(74, 246, 38, 0.5);
+    font-size: 2.5rem;
+    line-height: 1.2;
   }
 
   .game-intro {
     margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
   }
 
   .rating-section {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
+  }
+
+  .game-iframe-section {
+    margin: 3rem 0;
+    padding: 2rem 0;
+    border-top: 2px solid var(--dark-secondary);
+    border-bottom: 2px solid var(--dark-secondary);
   }
 
   .article-content {
@@ -173,11 +235,20 @@ const gameSchema = {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--purple);
+    font-size: 2rem;
+  }
+
+  .article-content h3 {
+    color: var(--yellow);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 
   .article-content p {
     margin-bottom: 1.5rem;
     line-height: 1.8;
+    font-size: 1rem;
   }
 
   .article-content ul {
@@ -216,5 +287,19 @@ const gameSchema = {
     font-size: 0.95rem;
     text-align: center;
     line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .game-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+    }
   }
 </style>
