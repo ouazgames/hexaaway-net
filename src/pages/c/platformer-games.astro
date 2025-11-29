@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -88,6 +89,16 @@ const breadcrumbSchema = {
             <p><strong>Platformer Games</strong> are action-packed games that test your jumping, timing, and navigation skills. From classic side-scrolling platformers to modern rhythm-based challenges, platformer games have been a staple of gaming for decades. These games combine simple controls with complex level design to create engaging and addictive experiences that appeal to players of all skill levels.</p>
           </div>
         </header>
+
+        <!-- TABLE OF CONTENTS -->
+        <TableOfContents items={[
+          { id: "what-are-platformers", title: "What Are Platformer Games?" },
+          { id: "types-of-platformers", title: "Types of Platformer Games" },
+          { id: "key-mechanics", title: "Key Platformer Mechanics" },
+          { id: "popular-platformers", title: "Popular Platformer Games" },
+          { id: "tips-for-success", title: "Tips for Success" },
+          { id: "faq", title: "Frequently Asked Questions" }
+        ]} />
 
         <section class="article-content">
           <h2 id="what-are-platformers">What Are Platformer Games?</h2>

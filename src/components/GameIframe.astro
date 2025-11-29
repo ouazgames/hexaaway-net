@@ -3,9 +3,10 @@ interface Props {
   src: string;
   title: string;
   description: string;
+  fallbackText?: string;
 }
 
-const { src, title, description } = Astro.props;
+const { src, title, description, fallbackText = "If the game doesn't load, please try refreshing the page or check your browser settings." } = Astro.props;
 ---
 
 <figure class="game-container" itemscope itemtype="https://schema.org/VideoGame">
@@ -15,9 +16,17 @@ const { src, title, description } = Astro.props;
       title={title}
       loading="lazy"
       allowfullscreen
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
       itemprop="embedUrl"
     ></iframe>
+    <div class="game-loading">
+      <div class="loading-spinner"></div>
+      <p>Loading game...</p>
+    </div>
+    <div class="game-error" style="display: none;">
+      <p>{fallbackText}</p>
+    </div>
   </div>
   <figcaption itemprop="description">{description}</figcaption>
 </figure>
@@ -57,6 +66,55 @@ const { src, title, description } = Astro.props;
     text-align: center;
   }
 
+  .game-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--cyan);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .loading-spinner {
+    border: 4px solid rgba(122, 48, 255, 0.3);
+    border-top: 4px solid var(--cyan);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .game-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--text-light);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 80%;
+  }
+
+  .game-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 2;
+  }
+
   @media (max-width: 768px) {
     .game-container {
       margin: 1.5rem 0;
@@ -67,3 +125,44 @@ const { src, title, description } = Astro.props;
     }
   }
 </style>
+
+
+<script>
+  // Handle iframe loading state
+  document.addEventListener('DOMContentLoaded', () => {
+    const iframes = document.querySelectorAll('.game-wrapper iframe');
+    
+    iframes.forEach((iframe) => {
+      const wrapper = iframe.closest('.game-wrapper');
+      const loadingEl = wrapper?.querySelector('.game-loading');
+      const errorEl = wrapper?.querySelector('.game-error');
+      
+      // Hide loading spinner when iframe loads
+      iframe.addEventListener('load', () => {
+        if (loadingEl) {
+          (loadingEl as HTMLElement).style.display = 'none';
+        }
+      });
+      
+      // Show error message if iframe fails to load after timeout
+      setTimeout(() => {
+        if (loadingEl && (loadingEl as HTMLElement).style.display !== 'none') {
+          (loadingEl as HTMLElement).style.display = 'none';
+          if (errorEl) {
+            (errorEl as HTMLElement).style.display = 'block';
+          }
+        }
+      }, 10000); // 10 second timeout
+      
+      // Handle iframe errors
+      iframe.addEventListener('error', () => {
+        if (loadingEl) {
+          (loadingEl as HTMLElement).style.display = 'none';
+        }
+        if (errorEl) {
+          (errorEl as HTMLElement).style.display = 'block';
+        }
+      });
+    });
+  });
+</script>

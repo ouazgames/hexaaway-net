@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -76,6 +77,16 @@ const breadcrumbSchema = {
             <p><strong>Music Games</strong> are interactive experiences where sound and music are central to gameplay. From rhythm-based platformers like <a href="/">Geometry Dash</a> to music production games, music games engage players through audio-visual synchronization. These games appeal to music enthusiasts, gamers, and anyone who enjoys the intersection of music and interactive entertainment.</p>
           </div>
         </header>
+
+        <!-- TABLE OF CONTENTS -->
+        <TableOfContents items={[
+          { id: "what-are-music-games", title: "What Are Music Games?" },
+          { id: "types-of-music-games", title: "Types of Music Games" },
+          { id: "popular-music-games", title: "Popular Music Games" },
+          { id: "benefits", title: "Benefits of Music Games" },
+          { id: "tips-for-success", title: "Tips for Success" },
+          { id: "faq", title: "Frequently Asked Questions" }
+        ]} />
 
         <section class="article-content">
           <h2 id="what-are-music-games">What Are Music Games?</h2>

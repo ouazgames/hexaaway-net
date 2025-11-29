@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import RatingWidget from '../components/RatingWidget.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import GameIframe from '../components/GameIframe.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' }
@@ -163,7 +164,7 @@ const tableOfContents = [
   description="Play Geometry Dash online for free! A rhythm-based platformer with challenging levels and addictive gameplay. No download required. Play now on geometrydash.ie!"
   keywords="geometry dash online, geometry dash free, play geometry dash, geometry dash game, rhythm platformer"
   jsonLd={[organizationSchema, gameSchema, webApplicationSchema, faqSchema, breadcrumbSchema]}
-  ogImage="/assets/covers/geometrydash-cover.png"
+  ogImage="/assets/covers/geometry-dash-gameplay-screenshot-obstacles.png"
 >
   <Header />
   
@@ -201,14 +202,17 @@ const tableOfContents = [
             description="Click the play button above to start playing Geometry Dash. Use spacebar, mouse click, or arrow keys to jump. Complete levels by avoiding obstacles and reaching 100%."
           />
         </section>
+
+        <!-- TABLE OF CONTENTS -->
+        <TableOfContents items={tableOfContents} />
         
         <section class="article-content">
           <h2 id="what-is-geometry-dash">What is Geometry Dash?</h2>
-          <p>Geometry Dash is a rhythm-based platformer game that has captivated millions of players worldwide. Created by Robert Topala (RobTop Games) and released in 2013, this game combines the simplicity of one-button controls with the complexity of challenging level design. The core mechanic is straightforward: tap to jump, but the execution requires precision timing, pattern recognition, and musical synchronization.</p>
+          <p>Geometry Dash is a <a href="/c/rhythm-games/">rhythm-based platformer</a> game that has captivated millions of players worldwide. Created by <a href="https://twitter.com/RobTopGames" target="_blank" rel="noopener">Robert Topala (RobTop Games)</a> and released in 2013, this game combines the simplicity of one-button controls with the complexity of challenging level design. The core mechanic is straightforward: tap to jump, but the execution requires precision timing, pattern recognition, and musical synchronization. You can download the official game from the <a href="https://apps.apple.com/us/app/geometry-dash/id625334537" target="_blank" rel="noopener">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.robtopx.geometryjump" target="_blank" rel="noopener">Google Play</a>.</p>
 
           <figure class="article-image">
             <img 
-              src="/assets/covers/geometrydash-cover.png" 
+              src="/assets/covers/geometry-dash-gameplay-screenshot-obstacles.png" 
               alt="Geometry Dash gameplay screenshot showing colorful obstacles and geometric shapes" 
               width="800" 
               height="450" 
@@ -217,7 +221,7 @@ const tableOfContents = [
             <figcaption>Geometry Dash features vibrant visuals and challenging obstacle courses synchronized with music</figcaption>
           </figure>
 
-          <p>The game operates on a simple principle: "Die and Retry." Each level failure sends you back to the beginning, but the game is designed so that you learn from each attempt. This addictive gameplay loop has made Geometry Dash one of the most popular games on mobile platforms and web browsers.</p>
+          <p>The game operates on a simple principle: "Die and Retry." Each level failure sends you back to the beginning, but the game is designed so that you learn from each attempt. This addictive gameplay loop has made Geometry Dash one of the most popular <a href="/c/platformer-games/">platformer games</a> on mobile platforms and web browsers. The game has received numerous updates, with the highly anticipated <a href="https://geometry-dash.fandom.com/wiki/Update_2.2" target="_blank" rel="noopener">Update 2.2</a> bringing exciting new features and gameplay mechanics.</p>
 
           <h2 id="how-to-play">How to Play Geometry Dash</h2>
           <p>Playing Geometry Dash is simple to learn but challenging to master. Your character moves automatically from left to right across the screen. Your only control is making your character jump. The timing of your jumps is critical—you must jump at exactly the right moment to avoid obstacles and reach the end of each level.</p>
@@ -229,7 +233,7 @@ const tableOfContents = [
             <li><strong>Keyboard:</strong> Use arrow keys or WASD for alternative controls</li>
           </ul>
 
-          <p>The key to success is listening to the music and watching the patterns. Most obstacles appear in sync with the beat, so experienced players use the soundtrack as a guide for when to jump. This synchronization between music and gameplay is what makes Geometry Dash unique among platformers.</p>
+          <p>The key to success is listening to the music and watching the patterns. Most obstacles appear in sync with the beat, so experienced players use the soundtrack as a guide for when to jump. This synchronization between <a href="/c/music-games/">music and gameplay</a> is what makes Geometry Dash unique among <a href="/c/geometry-games/">geometry platformers</a>.</p>
 
           <h2 id="gameplay-mechanics">Gameplay Mechanics</h2>
           <p>Geometry Dash features several core mechanics that define the gameplay experience:</p>

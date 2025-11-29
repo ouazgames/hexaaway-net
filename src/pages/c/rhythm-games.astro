@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -82,6 +83,16 @@ const breadcrumbSchema = {
             <p><strong>Rhythm Games</strong> combine music with interactive gameplay, creating a unique experience where your actions synchronize with the beat. From rhythm platformers like <a href="/">Geometry Dash</a> to music-based puzzle games, rhythm games test your timing, musical sense, and hand-eye coordination. These games appeal to music lovers and gamers alike, offering an engaging way to interact with music.</p>
           </div>
         </header>
+
+        <!-- TABLE OF CONTENTS -->
+        <TableOfContents items={[
+          { id: "what-are-rhythm-games", title: "What Are Rhythm Games?" },
+          { id: "types-of-rhythm-games", title: "Types of Rhythm Games" },
+          { id: "popular-rhythm-games", title: "Popular Rhythm Games" },
+          { id: "benefits", title: "Benefits of Playing Rhythm Games" },
+          { id: "tips-for-success", title: "Tips for Success" },
+          { id: "faq", title: "Frequently Asked Questions" }
+        ]} />
 
         <section class="article-content">
           <h2 id="what-are-rhythm-games">What Are Rhythm Games?</h2>

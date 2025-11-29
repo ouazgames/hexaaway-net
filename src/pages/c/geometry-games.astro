@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import RatingWidget from '../../components/RatingWidget.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import TableOfContents from '../../components/TableOfContents.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -106,6 +107,20 @@ const breadcrumbSchema = {
             <p><strong>Geometry Games</strong> are fast-paced platformers that combine rhythm-based gameplay with geometric obstacles. These games challenge your reflexes, timing, and pattern recognition skills. Whether you're a casual player or a hardcore gamer, geometry games offer endless entertainment and increasingly difficult challenges that will test your abilities.</p>
           </div>
         </header>
+
+        <!-- TABLE OF CONTENTS -->
+        <TableOfContents items={[
+          { id: "what-are-geometry-games", title: "What Are Geometry Games?" },
+          { id: "why-play-geometry-games", title: "Why Play Geometry Games?" },
+          { id: "popular-geometry-games", title: "Popular Geometry Games" },
+          { id: "gameplay-mechanics", title: "Common Geometry Game Mechanics" },
+          { id: "difficulty-progression", title: "Difficulty Progression" },
+          { id: "tips-for-success", title: "Tips for Success" },
+          { id: "community-and-content", title: "Community and User-Created Content" },
+          { id: "health-benefits", title: "Cognitive Benefits" },
+          { id: "getting-started", title: "Getting Started" },
+          { id: "faq", title: "Frequently Asked Questions" }
+        ]} />
 
         <section class="article-content">
           <h2 id="what-are-geometry-games">What Are Geometry Games?</h2>

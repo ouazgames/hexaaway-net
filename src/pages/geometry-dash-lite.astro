@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import RatingWidget from '../components/RatingWidget.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import GameIframe from '../components/GameIframe.astro';
+import TableOfContents from '../components/TableOfContents.astro';
 
 const breadcrumbItems = [
   { name: 'Home', url: '/' },
@@ -85,7 +86,7 @@ const faqSchema = {
   description="Play Geometry Dash Lite online for free! A beginner-friendly version with curated levels. Unblocked, no download required. Perfect for learning the game!"
   keywords="geometry dash lite, geometry dash lite online, geometry dash lite free, beginner platformer game"
   jsonLd={[gameSchema, faqSchema]}
-  ogImage="/assets/covers/geometrydash-lite-cover.png"
+  ogImage="/assets/covers/geometry-dash-lite-gameplay-screenshot-blue-theme.png"
 >
   <Header />
   
@@ -122,6 +123,9 @@ const faqSchema = {
             description="Click the play button above to start playing Geometry Dash Lite. Use spacebar, mouse click, or arrow keys to jump. Complete levels by avoiding obstacles and reaching 100%."
           />
         </section>
+
+        <!-- TABLE OF CONTENTS -->
+        <TableOfContents items={tableOfContents} />
         
         <section class="article-content">
           <h2 id="what-is-geometry-dash-lite">What is Geometry Dash Lite?</h2>

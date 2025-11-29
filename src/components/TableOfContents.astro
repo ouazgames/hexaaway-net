@@ -1,0 +1,171 @@
+---
+interface TocItem {
+  id: string;
+  title: string;
+}
+
+interface Props {
+  items: TocItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="table-of-contents" aria-label="Table of Contents">
+  <div class="toc-header">
+    <h2>Table of Contents</h2>
+  </div>
+  <ul class="toc-list">
+    {items.map((item) => (
+      <li class="toc-item">
+        <a href={`#${item.id}`} class="toc-link">
+          {item.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .table-of-contents {
+    background: linear-gradient(135deg, var(--dark-secondary) 0%, rgba(122, 48, 255, 0.1) 100%);
+    border: 2px solid var(--purple);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 16px rgba(122, 48, 255, 0.2);
+  }
+
+  .toc-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--purple);
+  }
+
+  .toc-header h2 {
+    font-size: 1.25rem;
+    color: var(--cyan);
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin: 0.5rem 0;
+  }
+
+  .toc-link {
+    color: var(--text-light);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .toc-link::before {
+    content: "▸";
+    position: absolute;
+    left: 0.5rem;
+    color: var(--purple);
+    transition: transform 0.3s ease;
+  }
+
+  .toc-link:hover {
+    background-color: rgba(122, 48, 255, 0.2);
+    color: var(--cyan);
+    transform: translateX(4px);
+  }
+
+  .toc-link:hover::before {
+    transform: translateX(4px);
+    color: var(--cyan);
+  }
+
+  .toc-link:focus {
+    outline: 2px solid var(--cyan);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .table-of-contents {
+      padding: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .toc-header h2 {
+      font-size: 1.1rem;
+    }
+
+    .toc-link {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.5rem;
+      padding-left: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  // Smooth scroll behavior for TOC links
+  document.addEventListener('DOMContentLoaded', () => {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.substring(1);
+        if (targetId) {
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            // Update URL without triggering page reload
+            history.pushState(null, '', `#${targetId}`);
+          }
+        }
+      });
+    });
+
+    // Highlight active section in TOC based on scroll position
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            tocLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -80% 0px' }
+    );
+
+    // Observe all headings that are in the TOC
+    tocLinks.forEach(link => {
+      const targetId = link.getAttribute('href')?.substring(1);
+      if (targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          observer.observe(targetElement);
+        }
+      }
+    });
+  });
+</script>
