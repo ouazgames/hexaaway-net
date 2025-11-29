@@ -69,10 +69,13 @@ const gameSchema = {
         </header>
         
         <div class="game-section">
+          <div class="cover-image">
+            <img src="/assets/covers/geometrydash-lite-cover.png" alt="Geometry Dash Lite Gameplay" width="800" height="450" />
+          </div>
           <GameIframe
-            src="https://geometrydashgame.com/wp-content/uploads/games/uploads/html5/geometry-dash-lite/index.html"
+            src="https://geometrydashgame.com/proxy/lite/"
             title="Play Geometry Dash Lite Online Free"
-            description="Experience Geometry Dash Lite directly in your browser. Jump through challenging levels with rhythm-based gameplay."
+            description="Experience Geometry Dash Lite with a curated selection of levels directly in your browser."
           />
         </div>
         
@@ -163,6 +166,24 @@ const gameSchema = {
 
   .game-section {
     margin: 3rem 0;
+  }
+
+  .cover-image {
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(74, 246, 38, 0.2);
+  }
+
+  .cover-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .cover-image:hover img {
+    transform: scale(1.02);
   }
 
   .article-content {
