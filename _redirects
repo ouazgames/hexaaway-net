@@ -1,0 +1,14 @@
+# Redirects for GeometryDash.ie
+
+# Redirect non-www to www (if using www subdomain)
+# http://geometrydash.ie/* https://www.geometrydash.ie/:splat 301
+# https://geometrydash.ie/* https://www.geometrydash.ie/:splat 301
+
+# Or redirect www to non-www (recommended for cleaner URLs)
+# https://www.geometrydash.ie/* https://geometrydash.ie/:splat 301
+
+# Redirect old URLs (if migrating from another site)
+# /old-page /new-page 301
+
+# 404 page
+/* /404.html 404

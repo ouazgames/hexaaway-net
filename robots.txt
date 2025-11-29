@@ -1,0 +1,15 @@
+# robots.txt for GeometryDash.ie
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://geometrydash.ie/sitemap-index.xml
+
+# Block specific bots if needed (currently none)
+# User-agent: BadBot
+# Disallow: /
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

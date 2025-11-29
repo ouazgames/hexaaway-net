@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import GameIframe from '../components/GameIframe.astro';
+import RatingWidget from '../components/RatingWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' }
+];
+
+const gameSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Geometry Dash",
+  "description": "Play Geometry Dash online for free. A rhythm-based platformer game with challenging levels, exciting gameplay, and addictive mechanics. Unblocked and ready to play!",
+  "genre": ["Platformer", "Rhythm", "Action"],
+  "gamePlatform": ["Web Browser", "Online"],
+  "applicationCategory": "Game",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "15420"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Robert Topala (RobTop)"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RobTop Games"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Geometry Dash free to play online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Geometry Dash is completely free to play online through your web browser. No downloads or installations required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Geometry Dash?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Geometry Dash is a rhythm-based platformer game where you control a geometric shape through various obstacle-filled levels."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Geometry Dash – Play Online (Free & Unblocked)"
+  description="Play Geometry Dash online for free! Experience the rhythm-based platformer game with challenging levels. Unblocked, no download required. Play now!"
+  keywords="geometry dash, geometry dash online, geometry dash unblocked, play geometry dash free"
+  jsonLd={[gameSchema, faqSchema]}
+  ogImage="/assets/covers/geometrydash-cover.png"
+>
+  <Header />
+  
+  <main id="main-content">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      
+      <article class="game-page">
+        <header class="game-header">
+          <h1>Geometry Dash – Play Online (Free & Unblocked)</h1>
+          
+          <div class="game-intro">
+            <p><strong>Geometry Dash</strong> is a rhythm-based platformer game that has captivated millions of players worldwide with its challenging gameplay, synchronized music, and addictive mechanics. Play free online now!</p>
+          </div>
+          
+          <div class="rating-section">
+            <RatingWidget rating={4.8} ratingCount={15420} gameName="Geometry Dash" />
+          </div>
+        </header>
+        
+        <div class="game-section">
+          <GameIframe
+            src="https://geometrydashgame.com/wp-content/uploads/games/uploads/html5/geometry-dash-game/index.html"
+            title="Play Geometry Dash Online Free"
+            description="Experience the full Geometry Dash game directly in your browser. Jump, fly, and flip your way through dangerous passages and spiky obstacles."
+          />
+        </div>
+        
+        <section class="article-content">
+          <h2>What is Geometry Dash?</h2>
+          <p>Geometry Dash is a rhythm-based action platformer game created by Robert Topala (RobTop Games). The game challenges players to navigate through obstacle-filled levels synchronized with music.</p>
+          
+          <h2>How to Play</h2>
+          <p>Use spacebar, up arrow, or mouse click to jump. Time your jumps perfectly to avoid spikes and obstacles. The game features multiple modes including cube, ship, ball, UFO, wave, robot, and spider.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .game-header h1 {
+    color: var(--neon-green);
+    margin: 2rem 0 1.5rem;
+    text-shadow: 0 0 20px rgba(74, 246, 38, 0.5);
+  }
+
+  .game-intro {
+    margin-bottom: 2rem;
+  }
+
+  .rating-section {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .game-section {
+    margin: 3rem 0;
+  }
+
+  .article-content {
+    margin-top: 3rem;
+  }
+
+  .article-content h2 {
+    color: var(--cyan);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--purple);
+  }
+
+  .article-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+</style>

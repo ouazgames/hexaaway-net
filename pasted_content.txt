@@ -1,0 +1,346 @@
+Create a complete, production-ready Astro project for https://geometrydash.ie
+.
+
+I already uploaded a Figma design file.
+Your job is to:
+→ Rebuild the full website EXACTLY like the Figma layout (structure, spacing, hierarchy)
+→ BUT with an improved UI using the Geometry Dash color palette
+(Neon Green #4AF626, Yellow #F6D60C, Purple #7930FF, Cyan #22E6E6, Black #0B0B0B)
+
+1. GENERAL REQUIREMENTS
+
+Build a clean, ultra-fast SSG Astro website, fully compatible with Cloudflare Pages.
+
+Use these folders:
+
+/src/pages/
+/src/components/
+/src/layouts/
+/src/styles/
+/public/assets/icons/
+/public/assets/covers/
+/utils/
+/schema/
+
+
+Rules:
+
+No hydration bloat
+
+No heavy JS
+
+SEO-first DOM ordering
+
+Visual reorder using CSS only
+
+Perfect Lighthouse
+
+Perfect Core Web Vitals
+
+Clean HTML + semantic tags
+
+2. IFRAME RULES (VERY IMPORTANT)
+
+The main game iframe must:
+
+visually appear on top
+
+but in DOM order it appears after the H1, intro paragraphs, ratings block
+
+lazy-load
+
+have AI-friendly attributes
+
+have a semantic wrapper (<figure> + <figcaption>)
+
+include fallback text
+
+be responsive
+
+Ask me for:
+
+→ every iframe URL
+→ every cover image (1200×630)
+→ every 512×512 icon
+
+before generating the final build.
+
+3. HOMEPAGE = MAIN GAME PAGE
+
+The homepage / is the primary Geometry Dash game landing page, containing:
+
+Navigation:
+
+Popular Games
+
+New Games
+
+Geometry Games (category)
+
+H1: Geometry Dash – Play Online (Free & Unblocked)
+
+Ratings block
+
+VISUALLY: main game iframe
+
+SEO DOM ORDER:
+
+H1
+
+intro paragraph
+
+rating
+
+(THEN iframe in DOM)
+
+One very long article (NOT split into pages)
+
+Similar Games section
+
+FAQ section
+
+Legal footer
+
+Schema JSON-LD blocks
+
+Breadcrumbs
+
+4. ARTICLE REQUIREMENTS (ONE SINGLE GIANT ARTICLE)
+
+The article must be:
+
+Extremely long
+
+Same depth + style as geometrydash.es
+
+But in English
+
+And fully optimized for SEO 2025 + ASEO
+
+Written as ONE SINGLE BODY (no splitting)
+
+Include sections like:
+
+What is Geometry Dash
+
+Full gameplay explanation
+
+Key mechanics
+
+Vehicles
+
+Level guide with a full table
+
+Tips / advanced techniques
+
+History
+
+All versions
+
+Geometry Dash 2.2 info
+
+Geometry Dash Online
+
+Geometry Dash Unblocked
+
+Geometry Dash APK
+
+FAQ (15+)
+
+Final conclusion
+
+5. SEO 2025 + ASEO (AI SEO) REQUIREMENTS
+
+Implement everything from latest SEO research (2025):
+
+DOM ORDER RULE
+
+H1
+
+Intro
+
+Ratings
+
+THEN iframe (visually moved up with CSS order)
+
+THEN full article
+
+AI SEO (Google Gemini + Perplexity + ChatGPT Search)
+
+Implement:
+
+semantically dense paragraphs
+
+descriptive captions for iframes
+
+LLM-friendly section headers
+
+meaning-rich ALT tags
+
+hidden meta hints (not keyword stuffing)
+
+VideoGame Schema.org
+
+FAQ schema
+
+BreadcrumbList
+
+WebSite + WebPage schema
+
+Technical SEO
+
+Canonical tags
+
+OG / Twitter cards
+
+robots.txt
+
+sitemap.xml
+
+Clean URL structure
+
+Internal linking
+
+Minimal CSS
+
+Preload fonts
+
+Also include any additional improvements you identify from your own 2025 SEO analysis.
+
+6. GAME PAGES TO CREATE
+
+Create these pages with the same structure as homepage:
+
+/geometry-dash-lite/
+
+/geometry-dash-meltdown/
+
+/geometry-dash-subzero/
+
+/geometry-dash-breeze/
+
+Each page must include:
+
+One long article (English)
+
+Similar games
+
+FAQ
+
+Schema
+
+Ratings
+
+Clean layout
+
+7. LEGAL PAGES
+
+Generate:
+
+/privacy-policy/
+
+/terms-of-service/
+
+/dmca/
+
+/contact/
+
+All professionally written and SEO-friendly.
+
+8. CLOUDLARE PAGES SETUP
+
+Generate:
+
+_redirects
+
+/* /index.html 200
+
+
+_headers
+
+/*
+  X-Frame-Options: allow-all
+  Cache-Control: public, max-age=31536000
+  X-Content-Type-Options: nosniff
+
+
+Make output in /dist.
+
+Provide full deployment instructions.
+
+9. DESIGN REQUIREMENTS
+
+Use the Figma file for:
+
+Layout
+
+Structure
+
+Spacing
+
+Typography
+
+Components
+
+Footer layout
+
+Header menu
+
+But improve it with:
+
+Geometry Dash palette
+
+Better visual hierarchy
+
+Cleaner spacing
+
+Nicer cards / game blocks
+
+Consistent shadow + depth
+
+Smooth hover transitions
+
+Everything must remain fully responsive.
+
+10. FINAL DELIVERABLES
+
+You must output:
+
+Complete Astro project
+
+All pages
+
+All components
+
+All schemas
+
+Global styles
+
+Navigation
+
+Footer
+
+Legal pages
+
+Sitemap
+
+Robots
+
+Headers
+
+Redirects
+
+Cloudflare Pages setup
+
+Full folder/file tree
+
+Downloadable zipped project structure (not binary)
+
+Ask me for the covers/icons/iframe URLs first
+
+⭐ START NOW
+
+Ask me first:
+“Please provide all iframe URLs, all cover images (1200x630), and all 512×512 icons for each game page.”
+
+Then generate the full project.

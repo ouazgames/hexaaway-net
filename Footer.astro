@@ -1,0 +1,155 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Geometry Dash</h3>
+        <p>Play Geometry Dash online for free. Experience the rhythm-based platformer game with challenging levels and exciting gameplay. Unblocked and ready to play!</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/geometry-dash-lite/">Geometry Dash Lite</a></li>
+          <li><a href="/geometry-dash-meltdown/">Geometry Dash Meltdown</a></li>
+          <li><a href="/geometry-dash-subzero/">Geometry Dash SubZero</a></li>
+          <li><a href="/geometry-dash-breeze/">Geometry Dash Breeze</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+          <li><a href="/dmca/">DMCA</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://twitter.com/geometrydash" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com/geometrydash" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 3.667h-3.533v7.98H9.101z"/>
+            </svg>
+          </a>
+          <a href="https://youtube.com/geometrydash" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Geometry Dash IE. All rights reserved.</p>
+      <p class="disclaimer">Geometry Dash is a trademark of RobTop Games. This is an unofficial fan site.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--black);
+    border-top: 2px solid var(--purple);
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3 {
+    color: var(--neon-green);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-section p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+    color: var(--text-light);
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: inline-block;
+  }
+
+  .footer-section ul li a:hover {
+    color: var(--cyan);
+    padding-left: 0.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--dark-secondary);
+    border-radius: 50%;
+    color: var(--text-light);
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background-color: var(--purple);
+    color: var(--text-white);
+    transform: translateY(-3px);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--dark-secondary);
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .disclaimer {
+    font-size: 0.85rem;
+    color: var(--dark-tertiary);
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

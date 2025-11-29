@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  keywords?: string;
+  jsonLd?: any[];
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.pathname,
+  ogImage = '/assets/covers/geometrydash-cover.webp',
+  ogType = 'website',
+  keywords = 'geometry dash, geometry dash online, geometry dash unblocked, play geometry dash, geometry dash game',
+  jsonLd = []
+} = Astro.props;
+
+const siteUrl = 'https://geometrydash.ie';
+const fullUrl = `${siteUrl}${canonical}`;
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>{title}</title>
+  <meta name="title" content={title}>
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+  <meta name="author" content="Geometry Dash IE">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href={fullUrl}>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={ogType}>
+  <meta property="og:url" content={fullUrl}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={fullOgImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Geometry Dash IE">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content={fullUrl}>
+  <meta property="twitter:title" content={title}>
+  <meta property="twitter:description" content={description}>
+  <meta property="twitter:image" content={fullOgImage}>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/icons/geometrydash-icon.png">
+  <link rel="apple-touch-icon" href="/assets/icons/geometrydash-icon.png">
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0d1b2a">
+  
+  <!-- JSON-LD Structured Data -->
+  {jsonLd.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+  
+  <!-- WebSite Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Geometry Dash IE",
+    "url": siteUrl,
+    "description": "Play Geometry Dash online for free. Unblocked rhythm-based platformer game with challenging levels and exciting gameplay.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteUrl}/search?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  })} />
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  
+  <slot />
+</body>
+</html>
