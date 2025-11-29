@@ -109,14 +109,9 @@ const faqSchema = {
           </div>
         </header>
 
-        <!-- TABLE OF CONTENTS -->
-        <nav class="table-of-contents" aria-label="Article Table of Contents">
-          <h2>Table of Contents</h2>
-          <ol class="toc-list">
-            {tableOfContents.map((item) => (
-              <li><a href={`#${item.id}`}>{item.title}</a></li>
-            ))}
-          </ol>
+        <!-- CATEGORY LINKS -->
+        <nav class="category-links" aria-label="Related Categories">
+          <p>Related Categories: <a href="/c/geometry-games/">Geometry Games</a> • <a href="/c/platformer-games/">Platformer Games</a> • <a href="/c/rhythm-games/">Rhythm Games</a> • <a href="/c/music-games/">Music Games</a></p>
         </nav>
 
         <!-- GAME IFRAME SECTION -->

@@ -1,0 +1,465 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: 'Home', url: '/' },
+  { name: 'Categories', url: '/categories/' },
+  { name: 'Platformer Games', url: '/c/platformer-games/' }
+];
+
+const categorySchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Platformer Games - Free Online Action Games",
+  "description": "Play the best platformer games online for free. Explore challenging action platformers with obstacles, enemies, and addictive gameplay.",
+  "url": "https://geometrydash.ie/c/platformer-games/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Geometry Dash",
+        "url": "https://geometrydash.ie/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Geometry Dash Lite",
+        "url": "https://geometrydash.ie/geometry-dash-lite/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Geometry Dash Meltdown",
+        "url": "https://geometrydash.ie/geometry-dash-meltdown/"
+      }
+    ]
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://geometrydash.ie"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Categories",
+      "item": "https://geometrydash.ie/categories/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Platformer Games",
+      "item": "https://geometrydash.ie/c/platformer-games/"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Platformer Games - Free Online Action Games | Geometry Dash IE"
+  description="Play the best platformer games online for free. Challenging action platformers with obstacles, precise controls, and addictive gameplay. No download required!"
+  keywords="platformer games, action games, free online games, jumping games, obstacle games"
+  jsonLd={[categorySchema, breadcrumbSchema]}
+  ogImage="/assets/covers/geometry-dash-gameplay-screenshot-obstacles.png"
+>
+  <Header />
+  
+  <main id="main-content">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+      
+      <article class="category-page">
+        <header class="category-header">
+          <h1>Platformer Games – Free Online Action Challenges</h1>
+          
+          <div class="category-intro">
+            <p><strong>Platformer Games</strong> are action-packed games that test your jumping, timing, and navigation skills. From classic side-scrolling platformers to modern rhythm-based challenges, platformer games have been a staple of gaming for decades. These games combine simple controls with complex level design to create engaging and addictive experiences that appeal to players of all skill levels.</p>
+          </div>
+        </header>
+
+        <section class="article-content">
+          <h2 id="what-are-platformers">What Are Platformer Games?</h2>
+          <p>Platformer games are a genre of video games where the primary gameplay involves navigating a character across platforms, jumping over obstacles, and avoiding hazards. The term "platformer" comes from the platforms that players must jump between to progress through levels. Platformers emphasize precise control, timing, and pattern recognition.</p>
+
+          <p>Platformers have a rich history dating back to the early days of gaming. Games like Donkey Kong (1981) and Super Mario Bros. (1985) defined the genre and established conventions that are still used today. Modern platformers like <a href="/">Geometry Dash</a> have evolved the genre by adding rhythm-based elements and new mechanics that keep the genre fresh and exciting.</p>
+
+          <h2 id="types-of-platformers">Types of Platformer Games</h2>
+          <p>Platformer games come in many varieties, each with unique characteristics:</p>
+
+          <h3>2D Platformers</h3>
+          <p>Traditional 2D platformers feature side-scrolling gameplay where you navigate left and right across platforms. These games focus on precise jumping and timing. Examples include <a href="/">Geometry Dash</a> and its variants, which add rhythm elements to the classic platformer formula.</p>
+
+          <h3>3D Platformers</h3>
+          <p>3D platformers expand the genre into three dimensions, allowing for more complex level design and camera control. These games require spatial awareness and more complex navigation strategies.</p>
+
+          <h3>Precision Platformers</h3>
+          <p>Precision platformers emphasize exact timing and pixel-perfect jumps. These games are designed to challenge skilled players with difficult obstacles and demanding level design. <a href="/">Geometry Dash</a> is an excellent example of a precision platformer.</p>
+
+          <h3>Rhythm Platformers</h3>
+          <p>Rhythm platformers synchronize obstacles and gameplay with music. <a href="/">Geometry Dash</a> pioneered this subgenre, creating a unique gaming experience where music guides your actions.</p>
+
+          <h3>Puzzle Platformers</h3>
+          <p>Puzzle platformers combine platforming mechanics with puzzle-solving elements. Players must figure out solutions before executing precise jumps.</p>
+
+          <h2 id="key-mechanics">Key Platformer Mechanics</h2>
+          <p>Most platformer games share common mechanics:</p>
+
+          <h3>Jumping</h3>
+          <p>Jumping is the fundamental mechanic in platformers. Players must master jump timing, distance, and height to navigate levels successfully. Different games feature different jump mechanics—some allow variable jump heights, others have fixed jump distances.</p>
+
+          <h3>Gravity</h3>
+          <p>Gravity affects how characters move and fall. Understanding gravity mechanics is essential for platformer success. Some games feature gravity manipulation mechanics that add complexity.</p>
+
+          <h3>Obstacle Avoidance</h3>
+          <p>Platformers feature various obstacles that must be avoided or overcome. These might include spikes, moving platforms, enemies, or environmental hazards.</p>
+
+          <h3>Collectibles</h3>
+          <p>Many platformers feature collectible items that reward exploration and skill. Collecting all items often unlocks achievements or secret content.</p>
+
+          <h3>Checkpoints and Lives</h3>
+          <p>Traditional platformers use checkpoints or lives systems. Modern platformers like <a href="/">Geometry Dash</a> use instant restart mechanics that allow players to retry immediately.</p>
+
+          <h2 id="difficulty-in-platformers">Difficulty and Progression</h2>
+          <p>Good platformers feature careful difficulty progression that teaches players new mechanics gradually. Early levels introduce basic jumping, while later levels combine multiple mechanics into complex challenges.</p>
+
+          <p><a href="/">Geometry Dash</a> is an excellent example of difficulty progression. The game starts with simple jumps and gradually introduces new mechanics like gravity changes, speed variations, and character transformations. This careful progression keeps players engaged and challenged without becoming frustrating.</p>
+
+          <h2 id="platformer-skills">Skills Developed by Playing Platformers</h2>
+          <p>Playing platformer games develops several important skills:</p>
+
+          <ul>
+            <li><strong>Hand-Eye Coordination:</strong> Platformers require precise coordination between visual input and motor output</li>
+            <li><strong>Timing:</strong> Success depends on jumping at exactly the right moment</li>
+            <li><strong>Pattern Recognition:</strong> Learning to recognize and predict obstacle patterns</li>
+            <li><strong>Spatial Awareness:</strong> Understanding distances and positions in game space</li>
+            <li><strong>Problem-Solving:</strong> Finding the right path through complex level designs</li>
+            <li><strong>Persistence:</strong> Platformers teach determination through repeated attempts</li>
+            <li><strong>Reflexes:</strong> Quick reactions are essential in fast-paced platformers</li>
+          </ul>
+
+          <h2 id="why-platformers-popular">Why Platformers Remain Popular</h2>
+          <p>Despite being one of the oldest game genres, platformers remain incredibly popular:</p>
+
+          <h3>Accessibility</h3>
+          <p>Platformers are easy to learn but difficult to master. The simple control scheme makes them accessible to casual players, while the challenging level design appeals to hardcore gamers.</p>
+
+          <h3>Instant Feedback</h3>
+          <p>Platformers provide immediate feedback for player actions. Success or failure is immediately apparent, creating a satisfying gameplay loop.</p>
+
+          <h3>Replayability</h3>
+          <p>Platformers encourage repeated playthroughs. Players try to improve their times, complete challenges, or discover secrets on subsequent playthroughs.</p>
+
+          <h3>Creative Level Design</h3>
+          <p>Platformers allow for creative and varied level design. Each level can introduce new mechanics or present familiar mechanics in novel ways.</p>
+
+          <h3>Community Engagement</h3>
+          <p>Platformers with level editors like <a href="/">Geometry Dash</a> foster community engagement through user-created content and competition.</p>
+
+          <h2 id="platformer-tips">Tips for Mastering Platformer Games</h2>
+          <ul>
+            <li><strong>Practice timing:</strong> Spend time learning the exact timing required for jumps</li>
+            <li><strong>Study patterns:</strong> Watch how obstacles move and when they appear</li>
+            <li><strong>Use checkpoints:</strong> Don't be afraid to use checkpoints or practice modes</li>
+            <li><strong>Stay calm:</strong> Panic leads to mistakes. Maintain composure during difficult sections</li>
+            <li><strong>Take breaks:</strong> Playing when frustrated reduces performance. Step away and return refreshed</li>
+            <li><strong>Watch others:</strong> Watching skilled players reveals techniques and strategies</li>
+            <li><strong>Practice difficult sections:</strong> Focus on mastering challenging parts before attempting full levels</li>
+            <li><strong>Customize controls:</strong> Adjust controls to match your preferences</li>
+            <li><strong>Learn from failures:</strong> Each failure teaches you something valuable</li>
+            <li><strong>Celebrate progress:</strong> Acknowledge improvements and celebrate achievements</li>
+          </ul>
+
+          <h2 id="platformer-evolution">Evolution of Platformer Games</h2>
+          <p>Platformer games have evolved significantly since their inception:</p>
+
+          <h3>Classic Era (1980s-1990s)</h3>
+          <p>Games like Donkey Kong and Super Mario Bros. established platformer conventions. These games featured simple graphics, straightforward level design, and addictive gameplay.</p>
+
+          <h3>3D Revolution (2000s)</h3>
+          <p>3D platformers like Super Mario 64 and Crash Bandicoot brought the genre into three dimensions, adding complexity and new design possibilities.</p>
+
+          <h3>Modern Era (2010s-Present)</h3>
+          <p>Modern platformers like <a href="/">Geometry Dash</a> combine traditional platforming with new mechanics like rhythm synchronization. Indie developers have created innovative platformers that push the genre in new directions.</p>
+
+          <h2 id="platformer-subgenres">Popular Platformer Subgenres</h2>
+          <p>The platformer genre includes several popular subgenres:</p>
+
+          <table class="subgenres-table">
+            <thead>
+              <tr>
+                <th>Subgenre</th>
+                <th>Characteristics</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rhythm Platformer</td>
+                <td>Synchronized with music</td>
+                <td><a href="/">Geometry Dash</a></td>
+              </tr>
+              <tr>
+                <td>Precision Platformer</td>
+                <td>Pixel-perfect jumps required</td>
+                <td><a href="/geometry-dash-meltdown/">Geometry Dash Meltdown</a></td>
+              </tr>
+              <tr>
+                <td>Puzzle Platformer</td>
+                <td>Combines puzzles with platforming</td>
+                <td>Portal series</td>
+              </tr>
+              <tr>
+                <td>Action Platformer</td>
+                <td>Combat and platforming combined</td>
+                <td>Castlevania series</td>
+              </tr>
+              <tr>
+                <td>Adventure Platformer</td>
+                <td>Story-driven platforming</td>
+                <td>Hollow Knight</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="getting-started">Getting Started with Platformer Games</h2>
+          <p>If you're new to platformer games, here's how to start:</p>
+
+          <ol>
+            <li>Start with beginner-friendly platformers like <a href="/geometry-dash-lite/">Geometry Dash Lite</a></li>
+            <li>Learn the basic controls and mechanics</li>
+            <li>Complete easy levels to build confidence</li>
+            <li>Progress to medium difficulty as you improve</li>
+            <li>Use practice modes to master difficult sections</li>
+            <li>Watch tutorials from experienced players</li>
+            <li>Join the community and share your progress</li>
+            <li>Challenge yourself with harder levels</li>
+          </ol>
+
+          <h2 id="faq">Frequently Asked Questions</h2>
+
+          <h3>What's the difference between platformers and action games?</h3>
+          <p>Platformers emphasize jumping and navigation, while action games focus on combat and reflexes. However, many games blend these elements.</p>
+
+          <h3>Are platformers only for experienced gamers?</h3>
+          <p>No, platformers range from very easy to extremely difficult. There are platformers suitable for all skill levels.</p>
+
+          <h3>Can I play platformers on mobile?</h3>
+          <p>Yes, many platformers work great on mobile devices. <a href="/">Geometry Dash</a> is fully optimized for mobile play.</p>
+
+          <h3>How long does it take to complete a platformer?</h3>
+          <p>Completion time varies greatly. Easy platformers might take hours, while challenging ones can take weeks or months of practice.</p>
+
+          <h2 id="conclusion">Conclusion</h2>
+          <p>Platformer games remain one of the most engaging and rewarding game genres. Whether you're looking for a casual gaming experience or a hardcore challenge, platformers offer something for everyone. Start with <a href="/geometry-dash-lite/">Geometry Dash Lite</a>, progress to <a href="/">Geometry Dash</a>, and explore other platformer games. The skills you develop and the satisfaction of completing challenging levels make platformers an excellent choice for any gamer.</p>
+
+          <div class="cta-section">
+            <h3>Play Platformer Games Now</h3>
+            <p>Ready to test your platforming skills? Try these popular platformer games:</p>
+            <ul class="game-links">
+              <li><a href="/geometry-dash-lite/">Play Geometry Dash Lite</a></li>
+              <li><a href="/">Play Geometry Dash</a></li>
+              <li><a href="/geometry-dash-meltdown/">Play Geometry Dash Meltdown</a></li>
+              <li><a href="/geometry-dash-subzero/">Play Geometry Dash SubZero</a></li>
+              <li><a href="/geometry-dash-breeze/">Play Geometry Dash Breeze</a></li>
+            </ul>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .category-header {
+    margin-bottom: 3rem;
+  }
+
+  .category-header h1 {
+    color: var(--neon-green);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(74, 246, 38, 0.5);
+    line-height: 1.2;
+  }
+
+  .category-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .article-content {
+    margin-top: 2rem;
+  }
+
+  .article-content h2 {
+    color: var(--cyan);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--purple);
+    font-size: 2rem;
+  }
+
+  .article-content h3 {
+    color: var(--yellow);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .article-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  .article-content a {
+    color: var(--cyan);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .article-content a:hover {
+    color: var(--neon-green);
+    text-decoration: underline;
+  }
+
+  .article-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .article-content li {
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+  }
+
+  .article-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .subgenres-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    border: 2px solid var(--purple);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .subgenres-table thead {
+    background-color: var(--dark-secondary);
+  }
+
+  .subgenres-table th {
+    color: var(--cyan);
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid var(--purple);
+  }
+
+  .subgenres-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--purple);
+  }
+
+  .subgenres-table tbody tr:hover {
+    background-color: rgba(74, 246, 38, 0.05);
+  }
+
+  .subgenres-table a {
+    color: var(--cyan);
+    text-decoration: none;
+  }
+
+  .subgenres-table a:hover {
+    color: var(--neon-green);
+    text-decoration: underline;
+  }
+
+  .cta-section {
+    background-color: var(--dark-secondary);
+    border: 2px solid var(--purple);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+
+  .cta-section h3 {
+    color: var(--neon-green);
+    margin-top: 0;
+    text-shadow: 0 0 10px rgba(74, 246, 38, 0.3);
+  }
+
+  .game-links {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0 0;
+  }
+
+  .game-links li {
+    margin-bottom: 1rem;
+  }
+
+  .game-links a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--purple), var(--cyan));
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .game-links a:hover {
+    background: linear-gradient(135deg, var(--cyan), var(--neon-green));
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(74, 246, 38, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .category-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .article-content h2 {
+      font-size: 1.5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+    }
+
+    .subgenres-table {
+      font-size: 0.9rem;
+    }
+
+    .subgenres-table th,
+    .subgenres-table td {
+      padding: 0.75rem;
+    }
+  }
+</style>

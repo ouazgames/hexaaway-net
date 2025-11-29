@@ -193,16 +193,6 @@ const tableOfContents = [
           </div>
         </header>
 
-        <!-- TABLE OF CONTENTS -->
-        <nav class="table-of-contents" aria-label="Article Table of Contents">
-          <h2>Table of Contents</h2>
-          <ol class="toc-list">
-            {tableOfContents.map((item) => (
-              <li><a href={`#${item.id}`}>{item.title}</a></li>
-            ))}
-          </ol>
-        </nav>
-
         <!-- GAME IFRAME SECTION -->
         <section class="game-iframe-section">
           <GameIframe 
@@ -460,6 +450,43 @@ const tableOfContents = [
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+  }
+
+  .game-icon-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .game-icon-box {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, #4AF626 0%, #2ECC71 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 40px rgba(74, 246, 38, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    border: 3px solid rgba(74, 246, 38, 0.6);
+  }
+
+  .game-icon-box:hover {
+    transform: scale(1.08) rotateZ(-5deg);
+    box-shadow: 0 16px 50px rgba(74, 246, 38, 0.6), inset 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+
+  .game-icon-box img {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 0 10px rgba(52, 152, 219, 0.8));
+    transition: filter 0.3s ease;
+  }
+
+  .game-icon-box:hover img {
+    filter: drop-shadow(0 0 15px rgba(52, 152, 219, 1));
   }
 
   .game-icon {
