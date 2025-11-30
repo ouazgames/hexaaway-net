@@ -1,6 +1,7 @@
 # Geometry Dash IE - robots.txt
 # Comprehensive robots.txt for SEO optimization
-# Last updated: November 29, 2025
+# Last updated: November 30, 2025
+# Validated and compliant with robots.txt standards
 
 # Default rules for all bots
 User-agent: *
@@ -17,7 +18,6 @@ Disallow: /cache/
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
-Request-rate: 1/1s
 
 User-agent: Googlebot-Image
 Allow: /
@@ -27,7 +27,6 @@ Allow: /assets/
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
-Request-rate: 1/2s
 
 # Other search engines
 User-agent: Slurp
@@ -77,6 +76,3 @@ Allow: /
 Sitemap: https://geometrydash.ie/sitemap-index.xml
 Sitemap: https://geometrydash.ie/sitemap-0.xml
 Sitemap: https://geometrydash.ie/sitemap-1.xml
-
-# Crawl delay for respectful crawling
-Request-rate: 1/1s
