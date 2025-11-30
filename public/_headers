@@ -4,9 +4,27 @@
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://geometrydashgame.com https://1games.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; frame-src https://geometrydashgame.com https://1games.io; connect-src 'self';
+  # Updated Content Security Policy to allow additional iframe domains.
+  # Allow additional third‑party domains to be embedded or to load scripts.
+  # The home page and the Geometry Dash Lite page were failing because their game
+  # iframes pointed at domains that weren't whitelisted.  To fix this we
+  # broadened the `script-src` and `frame-src` directives to include a wider
+  # set of Geometry Dash hosts.  These include geometrydashlite.io (the
+  # canonical domain for Geometry Dash Lite), geometry-lite.io (a popular
+  # alternative host), geometrydashlitepc.io (already allowed), and
+  # geometrydashlite.com/.net variations.  Without these entries the browser
+  # will refuse to load the remote iframe and the game appears blank.  See
+  # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-src
+  # for details.
+  Content-Security-Policy: default-src 'self';\
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://geometrydashgame.com https://1games.io https://geometrydash.es https://geometrydashlitepc.io https://geometrydashlite.io https://geometry-lite.io https://geometrydashlite.com https://geometrydashlite.net;\
+    style-src 'self' 'unsafe-inline';\
+    img-src 'self' data: https:;\
+    font-src 'self' data: https://fonts.gstatic.com;\
+    frame-src https://geometrydashgame.com https://1games.io https://geometrydash.es https://geometrydashlitepc.io https://geometrydashlite.io https://geometry-lite.io https://geometrydashlite.com https://geometrydashlite.net;\
+    connect-src 'self';
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  
+
 /*.css
   Cache-Control: public, max-age=31536000, immutable
 
