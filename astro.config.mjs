@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://hexaaway.net',
+  trailingSlash: 'always',
   integrations: [sitemap()],
   build: {
     inlineStylesheets: 'auto',
