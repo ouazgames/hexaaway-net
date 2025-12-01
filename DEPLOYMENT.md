@@ -1,7 +1,7 @@
 # Hexa Away Website - Deployment Guide
 
 ## Project Overview
-This is the hexaaway.net website built with Astro framework, based on the geometrydash.ie structure.
+This is the hexaaway.net website built with Astro framework, optimized for the Hexa Away puzzle game.
 
 ## What's Included
 - ✅ Hexa Away game with iframe integration
@@ -157,4 +157,4 @@ For issues or questions about the website structure, refer to the Astro document
 https://docs.astro.build
 
 ## License
-Built based on the geometrydash.ie project structure.
+All rights reserved.
