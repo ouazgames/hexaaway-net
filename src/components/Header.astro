@@ -6,9 +6,9 @@ const currentPath = Astro.url.pathname;
   <div class="container">
     <nav class="main-nav" aria-label="Main navigation">
       <div class="logo">
-        <a href="/" aria-label="Geometry Dash IE Home">
-          <img src="/assets/icons/geometrydash-icon-50.webp" alt="Geometry Dash" width="50" height="50">
-          <span>Geometry Dash</span>
+        <a href="/" aria-label="Hexa Away Home">
+          <img src="/assets/icons/hexaaway-icon.png" alt="Hexa Away" width="50" height="50">
+          <span>Hexa Away</span>
         </a>
       </div>
       
@@ -20,17 +20,8 @@ const currentPath = Astro.url.pathname;
       
       <ul class="nav-links">
         <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
-        <li class="dropdown">
-          <button aria-haspopup="true" aria-expanded="false">Popular Games</button>
-          <ul class="dropdown-menu">
-            <li><a href="/play/geometry-dash-lite/">Geometry Dash Lite</a></li>
-            <li><a href="/play/geometry-dash-meltdown/">Geometry Dash Meltdown</a></li>
-            <li><a href="/play/geometry-dash-subzero/">Geometry Dash SubZero</a></li>
-            <li><a href="/play/geometry-dash-breeze/">Geometry Dash Breeze</a></li>
-          </ul>
-        </li>
-        <li><a href="/c/new-games/" class={currentPath.startsWith('/c/new-games') ? 'active' : ''}>New Games</a></li>
-        <li><a href="/c/geometry-dash-games/" class={currentPath.startsWith('/c/geometry-dash-games') ? 'active' : ''}>Geometry Dash Games</a></li>
+        <li><a href="/contact" class={currentPath === '/contact' ? 'active' : ''}>Contact</a></li>
+        <li><a href="/privacy-policy" class={currentPath === '/privacy-policy' ? 'active' : ''}>Privacy</a></li>
       </ul>
     </nav>
   </div>

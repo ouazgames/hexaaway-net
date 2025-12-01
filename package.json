@@ -1,7 +1,7 @@
 {
-  "name": "geometrydash-ie",
+  "name": "hexaaway-net",
   "version": "1.0.0",
-  "description": "Geometry Dash online game website - SEO optimized",
+  "description": "Hexa Away online game website - SEO optimized",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
