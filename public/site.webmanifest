@@ -1,21 +1,39 @@
 {
-  "name": "Hexa Away",
+  "name": "Hexa Away - Free Online Hexagon Puzzle Game",
   "short_name": "Hexa Away",
-  "description": "Play Hexa Away online for free - Hexagon puzzle game",
+  "description": "Play Hexa Away online for free! The best hexagon puzzle game unblocked.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0d1b2a",
   "theme_color": "#0d1b2a",
+  "orientation": "any",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment", "puzzle"],
+  "shortcuts": [
+    {
+      "name": "Play Hexa Away",
+      "short_name": "Play",
+      "description": "Start playing Hexa Away immediately",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

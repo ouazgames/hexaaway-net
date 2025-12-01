@@ -7,9 +7,13 @@ export default defineConfig({
   integrations: [sitemap()],
   build: {
     inlineStylesheets: 'auto',
+    compressHTML: true,
+    inlineStylesheets: 'auto',
   },
   vite: {
     build: {
+    inlineStylesheets: 'auto',
+    compressHTML: true,
       minify: 'terser',
       terserOptions: {
         compress: {

@@ -17,7 +17,7 @@ const {
   canonical = Astro.url.pathname,
   ogImage = '/assets/covers/hexaaway-cover.png',
   ogType = 'website',
-  keywords = 'hexa away, hexa away game, hexagon puzzle, puzzle game online, brain teaser game',
+  keywords = 'hexa away, hexa away game, hexa away online, hexa away unblocked, hexagon puzzle, hexagon puzzle game, free puzzle games, logic game, brain teaser, puzzle games online, hex away, play hexa away, hexa away free',
   jsonLd = []
 } = Astro.props;
 
@@ -36,9 +36,16 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <title>{title}</title>
   <meta name="title" content={title}>
   <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+
 
   <meta name="author" content="Hexa Away">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  
+  <!-- Language Alternates -->
+  <link rel="alternate" hreflang="en" href={fullUrl}>
+  <link rel="alternate" hreflang="x-default" href={fullUrl}>
   
   <!-- Canonical URL -->
   <link rel="canonical" href={fullUrl}>
@@ -79,6 +86,10 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <!-- Web App Manifest -->
   <link rel="manifest" href="/site.webmanifest">
   
+  <!-- DNS Prefetch for Performance -->
+  <link rel="dns-prefetch" href="https://hexa-away.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  
   <!-- Preconnect to external domains for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +112,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
     "@type": "WebSite",
     "name": "Hexa Away",
     "url": siteUrl,
-    "description": "Play Hexa Away online for free. Unblocked hexagon puzzle game with challenging levels and clever gameplay.",
+    "description": "Play Hexa Away online for free! The best hexagon puzzle game unblocked. Challenging logic puzzles with clever gameplay. Play at school, work, or home - no download needed!",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
