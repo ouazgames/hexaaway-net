@@ -146,3 +146,26 @@ img {
   transform: translateX(-50%);
   top: 1rem;
 }
+
+/* Article Cover Image */
+.article-cover-image {
+  margin: 2rem 0;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.article-cover-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .article-cover-image {
+    margin: 1.5rem 0;
+  }
+}
