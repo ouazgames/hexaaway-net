@@ -15,13 +15,13 @@ const {
   title,
   description,
   canonical = Astro.url.pathname,
-  ogImage = '/assets/covers/geometry-dash-gameplay-screenshot-obstacles.png',
+  ogImage = '/assets/covers/hexaaway-cover.png',
   ogType = 'website',
-  keywords = 'geometry dash, geometry dash online, geometry dash unblocked, play geometry dash, geometry dash game',
+  keywords = 'hexa away, hexa away game, hexagon puzzle, puzzle game online, brain teaser game',
   jsonLd = []
 } = Astro.props;
 
-const siteUrl = 'https://geometrydash.ie';
+const siteUrl = 'https://hexaaway.net';
 const fullUrl = `${siteUrl}${canonical}`;
 const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 ---
@@ -37,7 +37,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <meta name="title" content={title}>
   <meta name="description" content={description}>
 
-  <meta name="author" content="Geometry Dash IE">
+  <meta name="author" content="Hexa Away">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
   <!-- Canonical URL -->
@@ -51,7 +51,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <meta property="og:image" content={fullOgImage}>
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="Geometry Dash IE">
+  <meta property="og:site_name" content="Hexa Away">
   <meta property="og:locale" content="en_US">
   
   <!-- Twitter -->
@@ -82,10 +82,10 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <!-- Preconnect to external domains for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://geometrygame.org">
-  <link rel="preconnect" href="https://geometrydashlitepc.io">
-  <link rel="preconnect" href="https://1games.io">
-  <link rel="preconnect" href="https://geometrydashgame.com">
+  <link rel="preconnect" href="https://hexa-away.com">
+
+
+
   
   <!-- Theme Color -->
   <meta name="theme-color" content="#0d1b2a">
@@ -99,9 +99,9 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Geometry Dash IE",
+    "name": "Hexa Away",
     "url": siteUrl,
-    "description": "Play Geometry Dash online for free. Unblocked rhythm-based platformer game with challenging levels and exciting gameplay.",
+    "description": "Play Hexa Away online for free. Unblocked hexagon puzzle game with challenging levels and clever gameplay.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {

@@ -1,7 +1,11 @@
 {
-  "name": "Geometry Dash IE",
-  "short_name": "Geometry Dash",
-  "description": "Play Geometry Dash online for free - Unblocked rhythm-based platformer game",
+  "name": "Hexa Away",
+  "short_name": "Hexa Away",
+  "description": "Play Hexa Away online for free - Hexagon puzzle game",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1b2a",
+  "theme_color": "#0d1b2a",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,10 +17,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#0d1b2a",
-  "background_color": "#0d1b2a",
-  "display": "standalone",
-  "start_url": "/",
-  "scope": "/"
+  ]
 }
