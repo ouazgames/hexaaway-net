@@ -2,8 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://ouazgames.github.io',
-  base: '/hexaaway-net',
+  site: 'https://hexaaway.net',
   integrations: [sitemap()],
   build: {
     inlineStylesheets: 'auto',
