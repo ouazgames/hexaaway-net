@@ -30,7 +30,9 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   
   <!-- Primary Meta Tags -->
   <title>{title}</title>
@@ -86,6 +88,11 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
   <!-- Web App Manifest -->
   <link rel="manifest" href="/site.webmanifest">
   
+  
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="/assets/icons/hexaaway-icon.png" as="image" type="image/png">
+  <link rel="preload" href="/assets/covers/hexaaway-cover-new.png" as="image" type="image/png">
+  
   <!-- DNS Prefetch for Performance -->
   <link rel="dns-prefetch" href="https://hexa-away.com">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -99,6 +106,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
 
   
   <!-- Theme Color -->
+  <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#0d1b2a">
   
   <!-- JSON-LD Structured Data -->
