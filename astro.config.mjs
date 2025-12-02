@@ -5,7 +5,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [],
   build: {
-    inlineStylesheets: 'auto',
+    inlineStylesheets: 'always',
     compressHTML: true,
   },
   vite: {

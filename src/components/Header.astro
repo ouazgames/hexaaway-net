@@ -7,7 +7,10 @@ const currentPath = Astro.url.pathname;
     <nav class="main-nav" aria-label="Main navigation">
       <div class="logo">
         <a href="/" aria-label="Hexa Away Home">
-          <img src="/assets/icons/hexaaway-icon.png" alt="Hexa Away" width="50" height="50" loading="eager" decoding="async" fetchpriority="high">
+          <picture>
+            <source srcset="/assets/icons/hexaaway-icon.webp" type="image/webp">
+            <img src="/assets/icons/hexaaway-icon.png" alt="Hexa Away" width="50" height="50" loading="eager" decoding="async" fetchpriority="high">
+          </picture>
           <span>Hexa Away</span>
         </a>
       </div>
