@@ -42,7 +42,9 @@ const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
       <span class="rating-count">({ratingCount.toLocaleString()} <span itemprop="ratingCount">{ratingCount}</span> ratings)</span>
     </div>
   </div>
-  <meta itemprop="itemReviewed" content={gameName} />
+  <div itemprop="itemReviewed" itemscope itemtype="https://schema.org/Thing">
+    <meta itemprop="name" content={gameName} />
+  </div>
   <meta itemprop="worstRating" content="1" />
 </div>
 
